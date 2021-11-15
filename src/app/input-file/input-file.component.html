@@ -1,0 +1,31 @@
+<div class="p-2 bg-primary text-white text-center">
+    <b style="font-size: 30px;">Azure Blob </b>
+    <hr>
+    Upload, Download, Delete, View
+</div>
+<br>
+<div class="m-2 p-1">
+    <div class="row justify-content-around ">
+        <div class="col">
+            <h2>Pictures List</h2>
+        </div>
+
+        <div class="col-2 text-center">
+            <input type="file" multiple name="file" id="file" (change)="imageSelected($event)">
+
+        </div>
+    </div>
+    <hr>
+
+    <div class="row image-row justify-content-around" *ngFor="let pic of picturesList">
+        <div class="col">{{pic.name}}</div>
+        <div class="col-2 text-center">
+            <span class="text-success download" (click)="downloadImage(pic.name)">DOWNLOAD</span>
+        </div>
+        <div class="col-2 text-center">
+
+            <span class="text-danger download" (click)="deleteImage(pic.name)">DELETE</span>
+
+        </div>
+    </div>
+</div>
